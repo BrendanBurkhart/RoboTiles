@@ -1,0 +1,24 @@
+#:kivy 1.9.1
+
+#:import TestCode testcode.TestCode
+#:import EditBoard editboard.EditBoard
+
+#:include kv/menu.kv
+#:include kv/editcode.kv
+#:include kv/editboard.kv
+#:include kv/instructions.kv
+#:include kv/testcode.kv
+#:include kv/options.kv
+
+ScreenManager:
+    Menu:
+    TestCode:
+        board_file: 'resources/board.txt'
+    EditBoard:
+        board_file: 'resources/board.txt'
+    EditCode:
+        template_file: 'resources/code_template.txt'
+        code_file: 'path.py'
+    Instructions:
+        instructions_file: 'resources/instructions.txt'
+    Options:

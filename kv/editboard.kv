@@ -1,0 +1,42 @@
+#:kivy 1.9.1
+
+#:import Grid grid.Grid
+
+<EditBoard>:
+    name: 'EditBoard'
+    grid: grid
+
+    BoxLayout:
+        orientation: "vertical"
+
+        ActionBar:
+            id: actionbar
+
+            ActionView:
+                use_separator: True
+
+                ActionPrevious:
+                    id: action_previous
+                    title: ""
+                    app_icon: ''
+                    app_icon_width: 0.1
+                    app_icon_height: 0
+                    with_previous: False
+
+                ActionOverflow:
+
+                ActionButton:
+                    text: 'Menu'
+                    on_release: root.menu()
+
+                ActionButton:
+                    text: 'Save'
+                    on_release: root.save_board()
+
+        Grid:
+            id: grid
+            cols: root.num_spaces
+            with_robot: False
+            click_callback: root.tile_click
+            grid_size: root.grid_size
+            num_lines: root.num_lines

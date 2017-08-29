@@ -1,0 +1,8 @@
+# Leave this import alone
+from movement import Move
+
+class Robot:
+    @staticmethod
+    def get_move():
+        # Place code for picking move here
+        return None

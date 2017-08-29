@@ -1,0 +1,45 @@
+#:kivy 1.9.1
+
+<Menu>:
+    name: 'Menu'
+
+    canvas.before:
+        Color:
+            rgb: 0.99609375, 0.59765625, 0.3984375
+        Rectangle:
+            size: self.size
+            source: 'resources/background.png'
+
+    GridLayout:
+        cols: 1
+        spacing: '8dp'
+        padding: '8dp'
+        size_hint: (.4, .6)
+        pos_hint: {'x':.3, 'y':.25}
+
+        Label:
+            font_name: 'resources/Md_Gothic11.ttf'
+            font_size: self.height/2.5
+            color: 0.16, 0.1, 0.1, 1
+            text: 'RoboTiles'
+
+        Button:
+            size_hint_y: None
+            height: '48dp'
+            text: 'Write Code'
+            font_size: self.height * 0.6
+            on_release: root.edit_code()
+
+        Button:
+            size_hint_y: None
+            height: '48dp'
+            text: 'Instructions'
+            font_size: self.height * 0.6
+            on_release: root.instructions()
+
+        Button:
+            size_hint_y: None
+            height: '48dp'
+            text: 'Options'
+            font_size: self.height * 0.6
+            on_release: root.options()

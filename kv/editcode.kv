@@ -1,0 +1,53 @@
+#:kivy 1.9.1
+
+<EditCode>:
+    name: 'EditCode'
+
+    BoxLayout:
+        orientation: "vertical"
+
+        ActionBar:
+            id: actionbar
+
+            ActionView:
+                use_separator: True
+
+                ActionPrevious:
+                    id: action_previous
+                    title: ''
+                    app_icon: ''
+                    app_icon_width: 0.1
+                    app_icon_height: 0
+                    with_previous: False
+
+                ActionOverflow:
+
+                ActionGroup:
+                    text: 'Navigation'
+
+                    ActionButton:
+                        text: 'Menu'
+                        on_release: root.menu()
+
+                    ActionButton:
+                        text: 'Test Code'
+                        on_release: root.test_code()
+
+                ActionGroup:
+                    text: 'Options'
+
+                    ActionButton:
+                        text: 'Save'
+                        on_release: root.save_code()
+
+                    ActionButton:
+                        text: 'Restart'
+                        on_release: root.reset_code()
+
+        CodeInput:
+            id: input_field
+            padding: '4dp'
+            text: ''
+            font_size: '16dp'
+            focus: True if root.parent else False
+            #background_color: 0.688, 0.664, 0.640, 1

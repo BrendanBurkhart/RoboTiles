@@ -1,0 +1,23 @@
+Instructions
+============
+
+There are two important areas in this app: the code writing screen and the code testing screen.
+
+In the code writing screen you will write Python code to navigate a 'robot' through a maze.
+In the code testing screen you can run and test your code. The objective is to write a program
+that can navigate the robot through any solvable maze and reach the green square (the exit).
+
+In the code writing screen you will find a simple editor with some default code. If you screw up
+and wish to start over, you can hit the restart button to return to the default code. Leaving the
+code writing screen will automatically save your code, but you can also use the save button if you wish.
+
+The Python code contains a static method called "get_move". You will be filling this method in to direct
+the robot through the maze. By returning one of "Move.FORWARD", "Move.LEFT", "Move.BACKWARD", or "Move.RIGHT"
+you can control how the robot will move. These values are defined elsewhere in the app and have no special
+meaning in Python. To assist in navigating the maze, some data about the robot's immediate surroundings
+are provided. This data is stored in Robot.environment. Each direction in Robot.environment (Robot.environment.front,
+Robot.environment.left, Robot.environment.right, Robot.environment.back) is a boolean value specifying
+whether or not the robot can move in that direction. For example, if Robot.environment.front is True, the way
+is clear for the robot to move that direction. If it is False, the is an obstacle (or the edge) in the robot's way.
+If you wish to store data from a previous call to Robot.get_move, set a static property of the
+'Robot' class. Have fun coding, and good luck!

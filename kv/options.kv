@@ -1,0 +1,39 @@
+#:kivy 1.9.1
+
+<Options>:
+    name: 'Options'
+
+    canvas.before:
+        Color:
+            rgb: 0.99609375, 0.59765625, 0.3984375
+        Rectangle:
+            size: self.size
+            source: 'resources/background.png'
+
+    GridLayout:
+        cols: 1
+        spacing: '8dp'
+        padding: '8dp'
+        size_hint: (.4, .6)
+        pos_hint: {'x':.3, 'y':0}
+
+        Button:
+            size_hint_y: None
+            height: '48dp'
+            text: 'Main Menu'
+            font_size: self.height * 0.6
+            on_release: root.menu()
+
+        Button:
+            size_hint_y: None
+            height: '48dp'
+            text: 'Test Code'
+            font_size: self.height * 0.6
+            on_release: root.test_code()
+
+        Button:
+            size_hint_y: None
+            height: '48dp'
+            text: 'Edit Board'
+            font_size: self.height * 0.6
+            on_release: root.edit_board()

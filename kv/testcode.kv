@@ -1,0 +1,58 @@
+#:kivy 1.9.1
+
+#:import Grid grid.Grid
+
+<TestCode>:
+    name: 'TestCode'
+    grid: grid
+
+    BoxLayout:
+        orientation: "vertical"
+
+        ActionBar:
+            id: actionbar
+
+            ActionView:
+                use_separator: True
+
+                ActionPrevious:
+                    id: action_previous
+                    title: root.message
+                    color: 0.99609375, 0.3984375, 0.3984375, 1
+                    app_icon: ''
+                    app_icon_width: 0.1
+                    app_icon_height: 0
+                    with_previous: False
+
+                ActionOverflow:
+
+                ActionGroup:
+                    text: 'Navigation'
+
+                    ActionButton:
+                        text: 'Menu'
+                        on_release: root.menu()
+
+                    ActionButton:
+                        text: 'Edit Code'
+                        on_release: root.edit_code()
+
+                ActionGroup:
+                    text: 'Controls'
+
+                    ActionButton:
+                        text: 'Start'
+                        on_release: root.start_path()
+
+                    ActionButton:
+                        text: 'Pause'
+                        on_release: root.pause()
+
+                    ActionButton:
+                        text: 'Reset'
+                        on_release: root.reset()
+        Grid:
+            id: grid
+            with_robot: True
+            grid_size: root.grid_size
+            num_lines: root.num_lines
